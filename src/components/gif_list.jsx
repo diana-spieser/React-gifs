@@ -1,16 +1,12 @@
-import React, { Component } from "react";
+import React from 'react';
+import Gif from './gif';
 
-class Gif extends Component {
-  handleModified = (event) => {
-    this.props.selectFunction(event.target.src);
-  };
+const GifList = (props) => {
+  return (
+    <div className="gif-list">
+      {props.gifs.map(gif => <Gif id={gif} key={gif} selectGif={props.selectGif} />)}
+    </div>
+  );
+};
 
-  render () {
-    const src = `https://media3.giphy.com/media/${this.props.id}/giphy.gif?cid=ecf05e470af30b2a9d4853e38b0e4bccce5aafcf135ffeae&rid=giphy.gif&ct=g`;
-    return (
-      <img src={src} alt="gif" className="gif" onClick={this.handleModified} />
-    );
-  }
-}
-
-export default Gif;
+export default GifList;

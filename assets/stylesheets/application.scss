@@ -1,6 +1,4 @@
-body {
-  font-family: Helvetica;
-}
+
 #root > div {
   display: flex;
   height: 100vh;
@@ -63,4 +61,7 @@ body {
       cursor: pointer;
     }
   }
+}
+.clicked {
+  color: red;
 }
