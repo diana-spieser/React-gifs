@@ -1,9 +1,11 @@
 
 import React, { Component } from 'react';
 
+const DEFAULT_SEARCH = "homer";
+
 class SearchBar extends Component {
   handleUpdate = (event) => {
-    this.props.searchFunction(event.target.value);
+    this.props.search(event.target.value);
   }
 
   render() {
@@ -11,6 +13,7 @@ class SearchBar extends Component {
       <input
         type="text"
         className="form-control form-search"
+        defaultValue={DEFAULT_SEARCH}
         onChange={this.handleUpdate}
       />
     );
@@ -18,3 +21,4 @@ class SearchBar extends Component {
 }
 
 export default SearchBar;
+export { DEFAULT_SEARCH };
